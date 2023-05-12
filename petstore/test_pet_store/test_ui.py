@@ -7,7 +7,7 @@ import pytest
 @pytest.mark.smoke
 @pytest.mark.regression
 def test_sign_in(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False, slow_mo=500)
+    browser = playwright.chromium.launch(headless=True, slow_mo=500)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://petstore.octoperf.com/actions/Catalog.action")
@@ -19,7 +19,7 @@ def test_sign_in(playwright: Playwright) -> None:
 
 @pytest.mark.integration
 def test_reptiles(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False, slow_mo=500)
+    browser = playwright.chromium.launch(headless=True, slow_mo=500)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://petstore.octoperf.com/actions/Catalog.action")
